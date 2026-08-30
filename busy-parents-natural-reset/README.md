@@ -9,16 +9,24 @@ A practical natural-weight-loss workbook for busy parents, with explanations, re
 
 ## 📥 Download the ebook (PDF)
 
+**English:**
 👉 **[The-Busy-Parents-Natural-Reset.pdf](The-Busy-Parents-Natural-Reset.pdf)** — click the file, then use the **Download** button (or right-click → *Save link as…*).
+
+**Tigrinya (ትግርኛ — Ge'ez script):**
+👉 **[The-Busy-Parents-Natural-Reset-Tigrinya.pdf](The-Busy-Parents-Natural-Reset-Tigrinya.pdf)** — *ዕረፍቲ ተፈጥሮ ንዕዉታት ወለዲ*
 
 ## Files in this repository
 
 | File | Description |
 |------|-------------|
-| `The-Busy-Parents-Natural-Reset.pdf` | 📕 The final, ready-to-publish ebook (25 pages, A4) |
-| `The-Busy-Parents-Natural-Reset.md` | Editable source manuscript (Markdown) |
-| `The-Busy-Parents-Natural-Reset.html` | Styled HTML version |
-| `build-pdf.mjs` | Script that rebuilds the PDF from the Markdown source |
+| `The-Busy-Parents-Natural-Reset.pdf` | 📕 The final, ready-to-publish ebook — English (25 pages, A4) |
+| `The-Busy-Parents-Natural-Reset.md` | Editable source manuscript — English (Markdown) |
+| `The-Busy-Parents-Natural-Reset.html` | Styled HTML version — English |
+| `build-pdf.mjs` | Script that rebuilds the English PDF from the Markdown source |
+| `The-Busy-Parents-Natural-Reset-Tigrinya.pdf` | 📕 The final ebook — Tigrinya / ትግርኛ (26 pages, A4, Ge'ez script) |
+| `The-Busy-Parents-Natural-Reset-Tigrinya.md` | Editable source manuscript — Tigrinya (Markdown) |
+| `The-Busy-Parents-Natural-Reset-Tigrinya.html` | Styled HTML version — Tigrinya |
+| `build-pdf-tigrinya.mjs` | Script that rebuilds the Tigrinya PDF (uses the Noto Sans Ethiopic font) |
 
 ## What's inside
 
@@ -28,10 +36,11 @@ A practical natural-weight-loss workbook for busy parents, with explanations, re
 - **Part 4 — Sustain:** habits that survive busy weeks, a 4-week reset plan
 - **Appendices:** superfoods shopping list, negative-calorie foods, printable worksheets & trackers
 
-## Rebuilding the PDF
+## Rebuilding the PDFs
 
 ```bash
-node build-pdf.mjs
+node build-pdf.mjs           # English
+node build-pdf-tigrinya.mjs  # Tigrinya (requires a Ge'ez/Ethiopic font, e.g. Noto Sans Ethiopic)
 ```
 
 ---
