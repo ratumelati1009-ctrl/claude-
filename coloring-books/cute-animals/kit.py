@@ -21,11 +21,15 @@ def eyes(c: Canvas, cx, cy, spacing, r, style="happy"):
     for s in (-1, 1):
         ex = cx + s * spacing / 2
         if style == "closed":
-            c.arc(ex, cy, r, 200, 340, width=MID)
+            # gentle upward-curved happy closed eye with a lash tick
+            c.arc(ex, cy, r * 1.05, 205, 335, width=MID)
+            c.line((ex - r * 0.95, cy - r * 0.18), (ex - r * 1.15, cy - r * 0.32), width=THIN)
             continue
-        c.circle(ex, cy, r, width=MID)              # eye outline
-        c.circle(ex, cy + r * 0.1, r * 0.55, width=THIN)  # pupil
-        c.circle(ex + s * r * 0.25, cy - r * 0.2, r * 0.18, width=THIN)  # sparkle
+        # tall rounded "kawaii" eye
+        c.ellipse(ex, cy, r * 0.92, r * 1.12, width=MID)      # eye outline
+        c.circle(ex, cy + r * 0.16, r * 0.62, width=THIN)     # big pupil
+        c.circle(ex + s * r * 0.26, cy - r * 0.22, r * 0.22, width=THIN)  # main sparkle
+        c.circle(ex - s * r * 0.18, cy + r * 0.32, r * 0.1, width=THIN)   # small sparkle
 
 
 def blush(c: Canvas, cx, cy, spacing, r):
@@ -34,7 +38,10 @@ def blush(c: Canvas, cx, cy, spacing, r):
 
 
 def smile(c: Canvas, cx, cy, w, depth=1.0):
-    c.arc(cx, cy, w, 20 * depth + 10, 170 - 20 * depth + 10, width=MID)
+    # soft rounded happy smile as a bezier curve (cuter than a plain arc)
+    c.path([("M", (cx - w, cy)),
+            ("C", (cx - w * 0.4, cy + w * 0.75 * depth),
+             (cx + w * 0.4, cy + w * 0.75 * depth), (cx + w, cy))], width=MID)
 
 
 def nose_muzzle(c: Canvas, cx, cy, r):

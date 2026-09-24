@@ -40,7 +40,28 @@ line thickness (bold main outline, medium secondary, thin accents), the same
 big round sparkle eyes, the same flower/grass/leaf motifs, and child-friendly
 proportions — so it reads like one artist illustrated the entire book.
 
-## Regenerate / customize
+## Want the soft "AI-illustrated" look from the reference?
+
+The polished fluffy-fur style (like the marketing samples) is produced by an AI
+**image** generator, not by code. This project includes everything to get there:
+
+- **`AI_IMAGE_PROMPTS.md`** — a cover prompt + **42 ready-to-paste prompts**
+  (one per page) for Midjourney / DALL·E / Leonardo / Ideogram, sharing one
+  consistent style block so the whole book matches.
+- **`assemble_from_images.py`** — drop your generated PNGs into `img/`
+  (`page_01.png` … `page_42.png`, optional `cover.png`) and run it to compile a
+  print-ready **8.5 × 11 in, 300-DPI KDP PDF** (`Cute-Animals-FINAL.pdf`).
+  Zero dependencies; handles PNG (RGB/RGBA/grey/palette) and JPEG.
+
+```bash
+# after saving your AI images into ./img
+python3 assemble_from_images.py
+```
+
+The included `interior.pdf` is the **code-drawn line-art version** (clean cartoon
+outlines) — a complete, usable book on its own, or a backup.
+
+## Regenerate / customize the line-art version
 
 ```bash
 python3 build_book.py
